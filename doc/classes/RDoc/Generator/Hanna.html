@@ -1,0 +1,583 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang='en'>
+  <head>
+    <title>RDoc::Generator::Hanna</title>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+    <link href='../../../css/style.css' media='screen' rel='stylesheet' type='text/css'>
+    <script type='text/javascript'>
+      //<![CDATA[
+        function popupCode(url) {
+          window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+        }
+        
+        function toggleCode(id) {
+          var code = document.getElementById(id)
+        
+          code.style.display = code.style.display != 'block' ? 'block' : 'none'
+          return true
+        }
+        
+        // Make codeblocks hidden by default
+        document.writeln('<' + 'style type="text/css">.method .source pre { display: none }<\/style>')
+      //]]>
+    </script>
+  </head>
+  <body class='page'>
+    <div class='class' id='wrapper'>
+      <div class='header'>
+        <h1 class='name'>
+          <span class='type'>class</span>
+          RDoc::Generator::Hanna
+        </h1>
+        <ol class='paths'>
+          <li>
+            <a target="docwin" href="../../../files/lib/hanna-nouveau_rb.html">lib/hanna-nouveau.rb</a>
+          </li>
+        </ol>
+        <div class='parent'>
+          Parent:
+          <strong><a target="docwin" href="../Generator.html">Generator</a></strong>
+        </div>
+      </div>
+      <div id='content'>
+        <div id='text'>
+          <div id='description'></div>
+          <div id='method-list'>
+            <h2>Methods</h2>
+            <h3>Public Class</h3>
+            <ol>
+              <li><a target="docwin" href="#method-c-for">for</a></li>
+              <li><a target="docwin" href="#method-c-new">new</a></li>
+            </ol>
+            <h3>Public Instance</h3>
+            <ol>
+              <li><a target="docwin" href="#method-i-build_javascript_search_index">build_javascript_search_index</a></li>
+              <li><a target="docwin" href="#method-i-class_dir">class_dir</a></li>
+              <li><a target="docwin" href="#method-i-classfile">classfile</a></li>
+              <li><a target="docwin" href="#method-i-file_dir">file_dir</a></li>
+              <li><a target="docwin" href="#method-i-frame_link">frame_link</a></li>
+              <li><a target="docwin" href="#method-i-generate">generate</a></li>
+              <li><a target="docwin" href="#method-i-generate_class_files">generate_class_files</a></li>
+              <li><a target="docwin" href="#method-i-generate_file_files">generate_file_files</a></li>
+              <li><a target="docwin" href="#method-i-generate_index">generate_index</a></li>
+              <li><a target="docwin" href="#method-i-generate_indexes">generate_indexes</a></li>
+              <li><a target="docwin" href="#method-i-h">h</a></li>
+              <li><a target="docwin" href="#method-i-haml_file">haml_file</a></li>
+              <li><a target="docwin" href="#method-i-link_to">link_to</a></li>
+              <li><a target="docwin" href="#method-i-link_to_method">link_to_method</a></li>
+              <li><a target="docwin" href="#method-i-outjoin">outjoin</a></li>
+              <li><a target="docwin" href="#method-i-render_class_tree">render_class_tree</a></li>
+              <li><a target="docwin" href="#method-i-sanitize_code_blocks">sanitize_code_blocks</a></li>
+              <li><a target="docwin" href="#method-i-templjoin">templjoin</a></li>
+              <li><a target="docwin" href="#method-i-with_layout">with_layout</a></li>
+              <li><a target="docwin" href="#method-i-write_static_files">write_static_files</a></li>
+            </ol>
+          </div>
+          <div id='context'>
+          </div>
+          <div id='section'>
+            <div id='constants-list'>
+              <h2>Constants</h2>
+              <div class='name-list'>
+                <table summary='Constants'>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>CLASS_DIR</td>
+                    <td>=</td>
+                    <td class='context-item-value'>'classes'</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'></td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>CLASS_INDEX</td>
+                    <td>=</td>
+                    <td class='context-item-value'>'class_index.haml'</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'></td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>CLASS_INDEX_OUT</td>
+                    <td>=</td>
+                    <td class='context-item-value'>'fr_class_index.html'</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'></td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>CLASS_PAGE</td>
+                    <td>=</td>
+                    <td class='context-item-value'>'page.haml'</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'></td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>DESCRIPTION</td>
+                    <td>=</td>
+                    <td class='context-item-value'>'a HAML-based HTML generator that scales'</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'></td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>FILE_DIR</td>
+                    <td>=</td>
+                    <td class='context-item-value'>'files'</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'></td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>FILE_INDEX</td>
+                    <td>=</td>
+                    <td class='context-item-value'>'file_index.haml'</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'></td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>FILE_INDEX_OUT</td>
+                    <td>=</td>
+                    <td class='context-item-value'>'fr_file_index.html'</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'></td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>FILE_PAGE</td>
+                    <td>=</td>
+                    <td class='context-item-value'>CLASS_PAGE</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'></td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>INDEX_OUT</td>
+                    <td>=</td>
+                    <td class='context-item-value'>'index.html'</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'></td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>INDEX_PAGE</td>
+                    <td>=</td>
+                    <td class='context-item-value'>'index.haml'</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'></td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>LAYOUT</td>
+                    <td>=</td>
+                    <td class='context-item-value'>'layout.haml'</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'></td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>METHOD_INDEX</td>
+                    <td>=</td>
+                    <td class='context-item-value'>'method_index.haml'</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'></td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>METHOD_INDEX_OUT</td>
+                    <td>=</td>
+                    <td class='context-item-value'>'fr_method_index.html'</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'></td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>METHOD_LIST_PAGE</td>
+                    <td>=</td>
+                    <td class='context-item-value'>'method_list.haml'</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'></td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>SECTIONS_PAGE</td>
+                    <td>=</td>
+                    <td class='context-item-value'>'sections.haml'</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'></td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>STYLE</td>
+                    <td>=</td>
+                    <td class='context-item-value'>'styles.sass'</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'></td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>STYLE_OUT</td>
+                    <td>=</td>
+                    <td class='context-item-value'>File.join('css', 'style.css')</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div id='methods'>
+              <h2>Public Class methods</h2>
+              <div class='method public-class' id='method-method-c-for'>
+                <a name='method-c-for'></a>
+                <div class='synopsis'>
+                  <span class='name'>for</span>
+                  <span class='arguments'>( options )</span>
+                </div>
+                <div class='description'>
+                  
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-c-for-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-c-for-source'><span class="ruby-comment"># File lib/hanna-nouveau.rb, line 48</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span><span class="ruby-operator">::</span><span class="ruby-keyword">for</span>( <span class="ruby-identifier">options</span> )&#x000A;  <span class="ruby-identifier">new</span>( <span class="ruby-identifier">options</span> )&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-class' id='method-method-c-new'>
+                <a name='method-c-new'></a>
+                <div class='synopsis'>
+                  <span class='name'>new</span>
+                  <span class='arguments'>( options )</span>
+                </div>
+                <div class='description'>
+                  
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-c-new-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-c-new-source'><span class="ruby-comment"># File lib/hanna-nouveau.rb, line 52</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>( <span class="ruby-identifier">options</span> )&#x000A;  <span class="ruby-ivar">@options</span> = <span class="ruby-identifier">options</span>&#x000A;&#x000A;  <span class="ruby-ivar">@templatedir</span> = <span class="ruby-constant">Pathname</span>.<span class="ruby-identifier">new</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-string">'../hanna-nouveau/template_files'</span>, <span class="ruby-keyword">__FILE__</span>)&#x000A;&#x000A;  <span class="ruby-ivar">@files</span>      = <span class="ruby-keyword">nil</span>&#x000A;  <span class="ruby-ivar">@classes</span>    = <span class="ruby-keyword">nil</span>&#x000A;  <span class="ruby-ivar">@methods</span>    = <span class="ruby-keyword">nil</span>&#x000A;  <span class="ruby-ivar">@attributes</span> = <span class="ruby-keyword">nil</span>&#x000A;&#x000A;  <span class="ruby-ivar">@basedir</span> = <span class="ruby-constant">Pathname</span>.<span class="ruby-identifier">pwd</span>.<span class="ruby-identifier">expand_path</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <h2>Public Instance methods</h2>
+              <div class='method public-instance' id='method-method-i-build_javascript_search_index'>
+                <a name='method-i-build_javascript_search_index'></a>
+                <div class='synopsis'>
+                  <span class='name'>build_javascript_search_index</span>
+                  <span class='arguments'>(entries)</span>
+                </div>
+                <div class='description'>
+                  
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-build_javascript_search_index-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-build_javascript_search_index-source'><span class="ruby-comment"># File lib/hanna-nouveau.rb, line 272</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">build_javascript_search_index</span>(<span class="ruby-identifier">entries</span>)&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-string">&quot;var search_index = [\n&quot;</span>&#x000A;  <span class="ruby-identifier">entries</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">entry</span><span class="ruby-operator">|</span>&#x000A;    <span class="ruby-identifier">method_name</span> = <span class="ruby-identifier">entry</span>.<span class="ruby-identifier">name</span>&#x000A;    <span class="ruby-identifier">module_name</span> = <span class="ruby-identifier">entry</span>.<span class="ruby-identifier">parent_name</span>&#x000A;    <span class="ruby-comment"># FIXME link</span>&#x000A;    <span class="ruby-identifier">html</span> = <span class="ruby-identifier">link_to_method</span>(<span class="ruby-identifier">entry</span>, [<span class="ruby-identifier">classfile</span>(<span class="ruby-identifier">entry</span>.<span class="ruby-identifier">parent</span>), (<span class="ruby-identifier">entry</span>.<span class="ruby-identifier">aref</span> <span class="ruby-keyword">rescue</span> <span class="ruby-node">&quot;method-#{entry.html_name}&quot;</span>)].<span class="ruby-identifier">join</span>(<span class="ruby-string">'#'</span>))&#x000A;    <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;  { method: '#{method_name.downcase}', &quot;</span> <span class="ruby-operator">+</span>&#x000A;                    <span class="ruby-node">&quot;module: '#{module_name.downcase}', &quot;</span> <span class="ruby-operator">+</span>&#x000A;                    <span class="ruby-node">&quot;html: '#{html}' },\n&quot;</span>&#x000A;  <span class="ruby-keyword">end</span>&#x000A;  <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;]&quot;</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-class_dir'>
+                <a name='method-i-class_dir'></a>
+                <div class='synopsis'>
+                  <span class='name'>class_dir</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-class_dir-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-class_dir-source'><span class="ruby-comment"># File lib/hanna-nouveau.rb, line 230</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">class_dir</span>&#x000A;  <span class="ruby-constant">CLASS_DIR</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-classfile'>
+                <a name='method-i-classfile'></a>
+                <div class='synopsis'>
+                  <span class='name'>classfile</span>
+                  <span class='arguments'>(klass)</span>
+                </div>
+                <div class='description'>
+                  
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-classfile-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-classfile-source'><span class="ruby-comment"># File lib/hanna-nouveau.rb, line 306</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">classfile</span>(<span class="ruby-identifier">klass</span>)&#x000A;  <span class="ruby-comment"># FIXME sloooooooow</span>&#x000A;  <span class="ruby-constant">Pathname</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">CLASS_DIR</span>, <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">full_name</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">'::'</span>)) <span class="ruby-operator">+</span> <span class="ruby-string">'.html'</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-file_dir'>
+                <a name='method-i-file_dir'></a>
+                <div class='synopsis'>
+                  <span class='name'>file_dir</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-file_dir-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-file_dir-source'><span class="ruby-comment"># File lib/hanna-nouveau.rb, line 234</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">file_dir</span>&#x000A;  <span class="ruby-constant">FILE_DIR</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-frame_link'>
+                <a name='method-i-frame_link'></a>
+                <div class='synopsis'>
+                  <span class='name'>frame_link</span>
+                  <span class='arguments'>(content)</span>
+                </div>
+                <div class='description'>
+                  
+                  <p>probably should bring in nokogiri/libxml2 to do this right.. not sure if
+                  it’s worth it.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-frame_link-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-frame_link-source'><span class="ruby-comment"># File lib/hanna-nouveau.rb, line 222</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">frame_link</span>(<span class="ruby-identifier">content</span>)&#x000A;  <span class="ruby-identifier">content</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">%r&lt;a href=&quot;http://[^&gt;]*&gt;!</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">tag</span><span class="ruby-operator">|</span>&#x000A;    <span class="ruby-identifier">a_tag</span>, <span class="ruby-identifier">rest</span> = <span class="ruby-identifier">tag</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">' '</span>, <span class="ruby-value">2</span>)&#x000A;    <span class="ruby-identifier">rest</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">%rtarget=&quot;[^&quot;]*&quot;/</span>, <span class="ruby-string">''</span>)&#x000A;    <span class="ruby-identifier">a_tag</span> <span class="ruby-operator">+</span> <span class="ruby-string">' target=&quot;_top&quot; '</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">rest</span>&#x000A;  <span class="ruby-keyword">end</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-generate'>
+                <a name='method-i-generate'></a>
+                <div class='synopsis'>
+                  <span class='name'>generate</span>
+                  <span class='arguments'>( top_levels )</span>
+                </div>
+                <div class='description'>
+                  
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-generate-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-generate-source'><span class="ruby-comment"># File lib/hanna-nouveau.rb, line 65</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">generate</span>( <span class="ruby-identifier">top_levels</span> )&#x000A;  <span class="ruby-ivar">@outputdir</span> = <span class="ruby-constant">Pathname</span>.<span class="ruby-identifier">new</span>( <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">op_dir</span> ).<span class="ruby-identifier">expand_path</span>( <span class="ruby-ivar">@basedir</span> )&#x000A;&#x000A;  <span class="ruby-ivar">@files</span>      = <span class="ruby-identifier">top_levels</span>.<span class="ruby-identifier">sort</span>&#x000A;  <span class="ruby-ivar">@classes</span>    = <span class="ruby-constant">RDoc</span><span class="ruby-operator">::</span><span class="ruby-constant">TopLevel</span>.<span class="ruby-identifier">all_classes_and_modules</span>.<span class="ruby-identifier">sort</span>&#x000A;  <span class="ruby-ivar">@methods</span>    = <span class="ruby-ivar">@classes</span>.<span class="ruby-identifier">map</span>(&amp;<span class="ruby-value">:method_list</span>).<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">sort</span>&#x000A;  <span class="ruby-ivar">@attributes</span> = <span class="ruby-ivar">@classes</span>.<span class="ruby-identifier">map</span>(&amp;<span class="ruby-value">:attributes</span>).<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">sort</span>&#x000A;&#x000A;  <span class="ruby-comment"># Now actually write the output</span>&#x000A;  <span class="ruby-identifier">write_static_files</span>&#x000A;  <span class="ruby-identifier">generate_indexes</span>&#x000A;  <span class="ruby-identifier">generate_class_files</span>&#x000A;  <span class="ruby-identifier">generate_file_files</span>&#x000A;&#x000A;<span class="ruby-keyword">rescue</span> <span class="ruby-constant">StandardError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">err</span>&#x000A;  <span class="ruby-identifier">p</span> [ <span class="ruby-identifier">err</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">err</span>.<span class="ruby-identifier">message</span>, <span class="ruby-identifier">err</span>.<span class="ruby-identifier">backtrace</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;\n  &quot;</span>) ]&#x000A;  <span class="ruby-identifier">raise</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-generate_class_files'>
+                <a name='method-i-generate_class_files'></a>
+                <div class='synopsis'>
+                  <span class='name'>generate_class_files</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-generate_class_files-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-generate_class_files-source'><span class="ruby-comment"># File lib/hanna-nouveau.rb, line 154</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">generate_class_files</span>&#x000A;  <span class="ruby-identifier">class_page</span>       = <span class="ruby-identifier">haml_file</span>(<span class="ruby-identifier">templjoin</span>(<span class="ruby-constant">CLASS_PAGE</span>))&#x000A;  <span class="ruby-identifier">method_list_page</span> = <span class="ruby-identifier">haml_file</span>(<span class="ruby-identifier">templjoin</span>(<span class="ruby-constant">METHOD_LIST_PAGE</span>))&#x000A;  <span class="ruby-identifier">sections_page</span>    = <span class="ruby-identifier">haml_file</span>(<span class="ruby-identifier">templjoin</span>(<span class="ruby-constant">SECTIONS_PAGE</span>))&#x000A;  <span class="ruby-comment"># FIXME refactor</span>&#x000A;&#x000A;  <span class="ruby-ivar">@classes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">klass</span><span class="ruby-operator">|</span>&#x000A;    <span class="ruby-identifier">outfile</span> = <span class="ruby-identifier">classfile</span>(<span class="ruby-identifier">klass</span>)&#x000A;    <span class="ruby-identifier">stylesheet</span> = <span class="ruby-constant">Pathname</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">STYLE_OUT</span>).<span class="ruby-identifier">relative_path_from</span>(<span class="ruby-identifier">outfile</span>.<span class="ruby-identifier">dirname</span>)&#x000A;    <span class="ruby-identifier">sections</span> = {}&#x000A;    <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">each_section</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">section</span>, <span class="ruby-identifier">constants</span>, <span class="ruby-identifier">attributes</span><span class="ruby-operator">|</span>&#x000A;      <span class="ruby-identifier">method_types</span> = []&#x000A;      <span class="ruby-identifier">alias_types</span> = []&#x000A;      <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">methods_by_type</span>(<span class="ruby-identifier">section</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">type</span>, <span class="ruby-identifier">visibilities</span><span class="ruby-operator">|</span>&#x000A;        <span class="ruby-identifier">visibilities</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">visibility</span>, <span class="ruby-identifier">methods</span><span class="ruby-operator">|</span>&#x000A;          <span class="ruby-identifier">aliases</span>, <span class="ruby-identifier">methods</span> = <span class="ruby-identifier">methods</span>.<span class="ruby-identifier">partition</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">is_alias_for</span>}&#x000A;          <span class="ruby-identifier">method_types</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-node">&quot;#{visibility.to_s.capitalize} #{type.to_s.capitalize}&quot;</span>, <span class="ruby-identifier">methods</span>.<span class="ruby-identifier">sort</span>] <span class="ruby-keyword">unless</span> <span class="ruby-identifier">methods</span>.<span class="ruby-identifier">empty?</span>&#x000A;          <span class="ruby-identifier">alias_types</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-node">&quot;#{visibility.to_s.capitalize} #{type.to_s.capitalize}&quot;</span>, <span class="ruby-identifier">aliases</span>.<span class="ruby-identifier">sort</span>] <span class="ruby-keyword">unless</span> <span class="ruby-identifier">aliases</span>.<span class="ruby-identifier">empty?</span>&#x000A;        <span class="ruby-keyword">end</span>&#x000A;      <span class="ruby-keyword">end</span>&#x000A;      <span class="ruby-identifier">sections</span>[<span class="ruby-identifier">section</span>] = {<span class="ruby-value">:constants=</span><span class="ruby-operator">&gt;</span><span class="ruby-identifier">constants</span>, <span class="ruby-value">:attributes=</span><span class="ruby-operator">&gt;</span><span class="ruby-identifier">attributes</span>, <span class="ruby-value">:method_types=</span><span class="ruby-operator">&gt;</span><span class="ruby-identifier">method_types</span>, <span class="ruby-value">:alias_types=</span><span class="ruby-operator">&gt;</span><span class="ruby-identifier">alias_types</span>}&#x000A;    <span class="ruby-keyword">end</span>&#x000A;&#x000A;    <span class="ruby-identifier">values</span> = { &#x000A;      <span class="ruby-value">:file</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">path</span>, &#x000A;      <span class="ruby-value">:entry</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">klass</span>,&#x000A;      <span class="ruby-value">:stylesheet</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">stylesheet</span>,&#x000A;      <span class="ruby-value">:classmod</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">type</span>,&#x000A;      <span class="ruby-value">:title</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">full_name</span>,&#x000A;      <span class="ruby-value">:list_title</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">nil</span>,&#x000A;      <span class="ruby-value">:description</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">description</span>,&#x000A;      <span class="ruby-value">:sections</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">sections</span>&#x000A;    } &#x000A;&#x000A;    <span class="ruby-identifier">result</span> = <span class="ruby-identifier">with_layout</span>(<span class="ruby-identifier">values</span>) <span class="ruby-keyword">do</span> &#x000A;      <span class="ruby-identifier">h</span> = {<span class="ruby-value">:values</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">values</span>}&#x000A;      <span class="ruby-identifier">class_page</span>.<span class="ruby-identifier">to_html</span>(<span class="ruby-identifier">binding</span>, <span class="ruby-identifier">h</span>) <span class="ruby-keyword">do</span> &#x000A;        <span class="ruby-identifier">method_list_page</span>.<span class="ruby-identifier">to_html</span>(<span class="ruby-identifier">binding</span>, <span class="ruby-identifier">h</span>) <span class="ruby-operator">+</span> <span class="ruby-identifier">sections_page</span>.<span class="ruby-identifier">to_html</span>(<span class="ruby-identifier">binding</span>, <span class="ruby-identifier">h</span>)&#x000A;      <span class="ruby-keyword">end</span>&#x000A;    <span class="ruby-keyword">end</span>&#x000A;&#x000A;    <span class="ruby-comment"># FIXME XXX sanity check</span>&#x000A;    <span class="ruby-identifier">dir</span> = <span class="ruby-identifier">outfile</span>.<span class="ruby-identifier">dirname</span>&#x000A;    <span class="ruby-keyword">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span> <span class="ruby-identifier">dir</span>&#x000A;      <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">mkdir_p</span> <span class="ruby-identifier">dir</span>&#x000A;    <span class="ruby-keyword">end</span>&#x000A;&#x000A;    <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">outfile</span>, <span class="ruby-string">'w'</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">result</span> }&#x000A;  <span class="ruby-keyword">end</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-generate_file_files'>
+                <a name='method-i-generate_file_files'></a>
+                <div class='synopsis'>
+                  <span class='name'>generate_file_files</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-generate_file_files-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-generate_file_files-source'><span class="ruby-comment"># File lib/hanna-nouveau.rb, line 119</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">generate_file_files</span>&#x000A;  <span class="ruby-identifier">file_page</span> = <span class="ruby-identifier">haml_file</span>(<span class="ruby-identifier">templjoin</span>(<span class="ruby-constant">FILE_PAGE</span>))&#x000A;  <span class="ruby-identifier">method_list_page</span> = <span class="ruby-identifier">haml_file</span>(<span class="ruby-identifier">templjoin</span>(<span class="ruby-constant">METHOD_LIST_PAGE</span>))&#x000A;&#x000A;  <span class="ruby-comment"># FIXME non-Ruby files</span>&#x000A;  <span class="ruby-ivar">@files</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span>&#x000A;    <span class="ruby-identifier">path</span> = <span class="ruby-constant">Pathname</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">file</span>.<span class="ruby-identifier">path</span>)&#x000A;    <span class="ruby-identifier">stylesheet</span> = <span class="ruby-constant">Pathname</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">STYLE_OUT</span>).<span class="ruby-identifier">relative_path_from</span>(<span class="ruby-identifier">path</span>.<span class="ruby-identifier">dirname</span>)&#x000A;    &#x000A;    <span class="ruby-identifier">values</span> = { &#x000A;      <span class="ruby-value">:file</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">file</span>, &#x000A;      <span class="ruby-value">:entry</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">file</span>,&#x000A;      <span class="ruby-value">:stylesheet</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">stylesheet</span>,&#x000A;      <span class="ruby-value">:classmod</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">nil</span>, &#x000A;      <span class="ruby-value">:title</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">file</span>.<span class="ruby-identifier">base_name</span>, &#x000A;      <span class="ruby-value">:list_title</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">nil</span>,&#x000A;      <span class="ruby-value">:description</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">file</span>.<span class="ruby-identifier">description</span>&#x000A;    } &#x000A;&#x000A;    <span class="ruby-identifier">result</span> = <span class="ruby-identifier">with_layout</span>(<span class="ruby-identifier">values</span>) <span class="ruby-keyword">do</span> &#x000A;      <span class="ruby-identifier">file_page</span>.<span class="ruby-identifier">to_html</span>(<span class="ruby-identifier">binding</span>, <span class="ruby-value">:values</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">values</span>) <span class="ruby-keyword">do</span> &#x000A;        <span class="ruby-identifier">method_list_page</span>.<span class="ruby-identifier">to_html</span>(<span class="ruby-identifier">binding</span>, <span class="ruby-identifier">values</span>) &#x000A;      <span class="ruby-keyword">end</span>&#x000A;    <span class="ruby-keyword">end</span>&#x000A;&#x000A;    <span class="ruby-comment"># FIXME XXX sanity check</span>&#x000A;    <span class="ruby-identifier">dir</span> = <span class="ruby-identifier">path</span>.<span class="ruby-identifier">dirname</span>&#x000A;    <span class="ruby-keyword">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span> <span class="ruby-identifier">dir</span>&#x000A;      <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">mkdir_p</span> <span class="ruby-identifier">dir</span>&#x000A;    <span class="ruby-keyword">end</span>&#x000A;&#x000A;    <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">outjoin</span>(<span class="ruby-identifier">file</span>.<span class="ruby-identifier">path</span>), <span class="ruby-string">'w'</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">result</span> }&#x000A;  <span class="ruby-keyword">end</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-generate_index'>
+                <a name='method-i-generate_index'></a>
+                <div class='synopsis'>
+                  <span class='name'>generate_index</span>
+                  <span class='arguments'>(outfile, templfile, index_name, values)</span>
+                </div>
+                <div class='description'>
+                  
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-generate_index-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-generate_index-source'><span class="ruby-comment"># File lib/hanna-nouveau.rb, line 104</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">generate_index</span>(<span class="ruby-identifier">outfile</span>, <span class="ruby-identifier">templfile</span>, <span class="ruby-identifier">index_name</span>, <span class="ruby-identifier">values</span>)&#x000A;  <span class="ruby-identifier">values</span>.<span class="ruby-identifier">merge!</span>({&#x000A;    <span class="ruby-value">:stylesheet</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">STYLE_OUT</span>,&#x000A;    <span class="ruby-value">:list_title</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{index_name} Index&quot;</span>&#x000A;  })&#x000A;&#x000A;  <span class="ruby-identifier">index</span> = <span class="ruby-identifier">haml_file</span>(<span class="ruby-identifier">templjoin</span>(<span class="ruby-identifier">templfile</span>))&#x000A;&#x000A;  <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">outjoin</span>(<span class="ruby-identifier">outfile</span>), <span class="ruby-string">'w'</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> &#x000A;    <span class="ruby-identifier">f</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">with_layout</span>(<span class="ruby-identifier">values</span>) <span class="ruby-keyword">do</span>&#x000A;           <span class="ruby-identifier">index</span>.<span class="ruby-identifier">to_html</span>(<span class="ruby-identifier">binding</span>, <span class="ruby-identifier">values</span>)&#x000A;         <span class="ruby-keyword">end</span>&#x000A;  <span class="ruby-keyword">end</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-generate_indexes'>
+                <a name='method-i-generate_indexes'></a>
+                <div class='synopsis'>
+                  <span class='name'>generate_indexes</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  
+                  <p>FIXME refactor</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-generate_indexes-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-generate_indexes-source'><span class="ruby-comment"># File lib/hanna-nouveau.rb, line 95</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">generate_indexes</span>&#x000A;  <span class="ruby-ivar">@main_page_uri</span> = <span class="ruby-ivar">@files</span>.<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">main_page</span> }.<span class="ruby-identifier">path</span> <span class="ruby-keyword">rescue</span> <span class="ruby-string">''</span>&#x000A;  <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">outjoin</span>(<span class="ruby-constant">INDEX_OUT</span>), <span class="ruby-string">'w'</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">haml_file</span>(<span class="ruby-identifier">templjoin</span>(<span class="ruby-constant">INDEX_PAGE</span>)).<span class="ruby-identifier">to_html</span>(<span class="ruby-identifier">binding</span>) }&#x000A;&#x000A;  <span class="ruby-identifier">generate_index</span>(<span class="ruby-constant">FILE_INDEX_OUT</span>,   <span class="ruby-constant">FILE_INDEX</span>,   <span class="ruby-string">'File'</span>,   { <span class="ruby-value">:files</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@files</span>})&#x000A;  <span class="ruby-identifier">generate_index</span>(<span class="ruby-constant">CLASS_INDEX_OUT</span>,  <span class="ruby-constant">CLASS_INDEX</span>,  <span class="ruby-string">'Class'</span>,  { <span class="ruby-value">:classes</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@classes</span> })&#x000A;  <span class="ruby-identifier">generate_index</span>(<span class="ruby-constant">METHOD_INDEX_OUT</span>, <span class="ruby-constant">METHOD_INDEX</span>, <span class="ruby-string">'Method'</span>, { <span class="ruby-value">:methods</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@methods</span>, <span class="ruby-value">:attributes</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@attributes</span> })&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-h'>
+                <a name='method-i-h'></a>
+                <div class='synopsis'>
+                  <span class='name'>h</span>
+                  <span class='arguments'>(html)</span>
+                </div>
+                <div class='description'>
+                  
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-h-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-h-source'><span class="ruby-comment"># File lib/hanna-nouveau.rb, line 238</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">h</span>(<span class="ruby-identifier">html</span>)&#x000A;  <span class="ruby-constant">CGI</span><span class="ruby-operator">::</span><span class="ruby-identifier">escapeHTML</span>(<span class="ruby-identifier">html</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-haml_file'>
+                <a name='method-i-haml_file'></a>
+                <div class='synopsis'>
+                  <span class='name'>haml_file</span>
+                  <span class='arguments'>(file)</span>
+                </div>
+                <div class='description'>
+                  
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-haml_file-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-haml_file-source'><span class="ruby-comment"># File lib/hanna-nouveau.rb, line 319</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">haml_file</span>(<span class="ruby-identifier">file</span>)&#x000A;  <span class="ruby-constant">Haml</span><span class="ruby-operator">::</span><span class="ruby-constant">Engine</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">file</span>), <span class="ruby-value">:format</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:html4</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-link_to'>
+                <a name='method-i-link_to'></a>
+                <div class='synopsis'>
+                  <span class='name'>link_to</span>
+                  <span class='arguments'>(text, url = nil, classname = nil)</span>
+                </div>
+                <div class='description'>
+                  
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-link_to-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-link_to-source'><span class="ruby-comment"># File lib/hanna-nouveau.rb, line 287</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">link_to</span>(<span class="ruby-identifier">text</span>, <span class="ruby-identifier">url</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">classname</span> = <span class="ruby-keyword">nil</span>)&#x000A;  <span class="ruby-identifier">class_attr</span> = <span class="ruby-identifier">classname</span> <span class="ruby-operator">?</span> <span class="ruby-string">' class=&quot;%s&quot;'</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">classname</span> <span class="ruby-operator">:</span> <span class="ruby-string">''</span>&#x000A;&#x000A;  <span class="ruby-keyword">if</span> <span class="ruby-identifier">url</span>&#x000A;      <span class="ruby-node">%Q[&lt;a target=&quot;docwin&quot; href=&quot;#{url}&quot;#{class_attr}&gt;#{text}&lt;/a&gt;]</span>&#x000A;  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">classname</span>&#x000A;      <span class="ruby-node">%Q[&lt;span#{class_attr}&gt;#{text}&lt;/span&gt;]</span>&#x000A;  <span class="ruby-keyword">else</span>&#x000A;    <span class="ruby-identifier">text</span>&#x000A;  <span class="ruby-keyword">end</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-link_to_method'>
+                <a name='method-i-link_to_method'></a>
+                <div class='synopsis'>
+                  <span class='name'>link_to_method</span>
+                  <span class='arguments'>(entry, url = nil, classname = nil)</span>
+                </div>
+                <div class='description'>
+                  
+                  <p><code>method_text</code> is in the form of "ago
+                  (ActiveSupport::TimeWithZone)".</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-link_to_method-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-link_to_method-source'><span class="ruby-comment"># File lib/hanna-nouveau.rb, line 300</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">link_to_method</span>(<span class="ruby-identifier">entry</span>, <span class="ruby-identifier">url</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">classname</span> = <span class="ruby-keyword">nil</span>)&#x000A;  <span class="ruby-identifier">method_name</span> = <span class="ruby-identifier">entry</span>.<span class="ruby-identifier">pretty_name</span> <span class="ruby-keyword">rescue</span> <span class="ruby-identifier">entry</span>.<span class="ruby-identifier">name</span>&#x000A;  <span class="ruby-identifier">module_name</span> = <span class="ruby-identifier">entry</span>.<span class="ruby-identifier">parent_name</span> <span class="ruby-keyword">rescue</span> <span class="ruby-identifier">entry</span>.<span class="ruby-identifier">name</span>&#x000A;  <span class="ruby-identifier">link_to</span> <span class="ruby-node">%Q(&lt;span class=&quot;method_name&quot;&gt;#{h method_name}&lt;/span&gt; &lt;span class=&quot;module_name&quot;&gt;(#{h module_name})&lt;/span&gt;)</span>, <span class="ruby-identifier">url</span>, <span class="ruby-identifier">classname</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-outjoin'>
+                <a name='method-i-outjoin'></a>
+                <div class='synopsis'>
+                  <span class='name'>outjoin</span>
+                  <span class='arguments'>(name)</span>
+                </div>
+                <div class='description'>
+                  
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-outjoin-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-outjoin-source'><span class="ruby-comment"># File lib/hanna-nouveau.rb, line 311</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">outjoin</span>(<span class="ruby-identifier">name</span>)&#x000A;  <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-ivar">@outputdir</span>, <span class="ruby-identifier">name</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-render_class_tree'>
+                <a name='method-i-render_class_tree'></a>
+                <div class='synopsis'>
+                  <span class='name'>render_class_tree</span>
+                  <span class='arguments'>(entries, parent=nil)</span>
+                </div>
+                <div class='description'>
+                  
+                  <p>XXX may my sins be not visited upon my sons.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-render_class_tree-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-render_class_tree-source'><span class="ruby-comment"># File lib/hanna-nouveau.rb, line 243</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">render_class_tree</span>(<span class="ruby-identifier">entries</span>, <span class="ruby-identifier">parent</span>=<span class="ruby-keyword">nil</span>)&#x000A;  <span class="ruby-identifier">namespaces</span> = { }&#x000A;&#x000A;  <span class="ruby-identifier">entries</span>.<span class="ruby-identifier">sort</span>.<span class="ruby-identifier">inject</span>(<span class="ruby-string">''</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">out</span>, <span class="ruby-identifier">klass</span><span class="ruby-operator">|</span>&#x000A;    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">namespaces</span>[<span class="ruby-identifier">klass</span>.<span class="ruby-identifier">full_name</span>]&#x000A;      <span class="ruby-keyword">if</span> <span class="ruby-identifier">parent</span>&#x000A;        <span class="ruby-identifier">text</span> = <span class="ruby-string">'&lt;span class=&quot;parent&quot;&gt;%s::&lt;/span&gt;%s'</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">parent</span>.<span class="ruby-identifier">full_name</span>, <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">name</span>]&#x000A;      <span class="ruby-keyword">else</span>&#x000A;        <span class="ruby-identifier">text</span> = <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">name</span>&#x000A;      <span class="ruby-keyword">end</span>&#x000A;&#x000A;      <span class="ruby-keyword">if</span> <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">document_self</span>&#x000A;        <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">'&lt;li&gt;'</span>&#x000A;        <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">link_to</span>(<span class="ruby-identifier">text</span>, <span class="ruby-identifier">classfile</span>(<span class="ruby-identifier">klass</span>))&#x000A;      <span class="ruby-keyword">end</span>&#x000A;&#x000A;      <span class="ruby-identifier">subentries</span> = <span class="ruby-ivar">@classes</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">full_name</span>[<span class="ruby-node">%r^#{klass.full_name}::/</span>] }&#x000A;      <span class="ruby-identifier">subentries</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">namespaces</span>[<span class="ruby-identifier">x</span>.<span class="ruby-identifier">full_name</span>] = <span class="ruby-keyword">true</span> }&#x000A;      <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;\n&lt;ol&gt;&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">render_class_tree</span>(<span class="ruby-identifier">subentries</span>, <span class="ruby-identifier">klass</span>) <span class="ruby-operator">+</span> <span class="ruby-string">&quot;\n&lt;/ol&gt;&quot;</span>&#x000A;&#x000A;      <span class="ruby-keyword">if</span> <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">document_self</span>&#x000A;        <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">'&lt;/li&gt;'</span>&#x000A;      <span class="ruby-keyword">end</span>&#x000A;    <span class="ruby-keyword">end</span>&#x000A;&#x000A;    <span class="ruby-identifier">out</span>&#x000A;  <span class="ruby-keyword">end</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-sanitize_code_blocks'>
+                <a name='method-i-sanitize_code_blocks'></a>
+                <div class='synopsis'>
+                  <span class='name'>sanitize_code_blocks</span>
+                  <span class='arguments'>(text)</span>
+                </div>
+                <div class='description'>
+                  
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-sanitize_code_blocks-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-sanitize_code_blocks-source'><span class="ruby-comment"># File lib/hanna-nouveau.rb, line 210</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">sanitize_code_blocks</span>(<span class="ruby-identifier">text</span>)&#x000A;  <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">%r&lt;pre&gt;(.+?)&lt;\/pre&gt;/</span>) <span class="ruby-keyword">do</span>&#x000A;    <span class="ruby-identifier">code</span> = <span class="ruby-node">$1</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">%r^\s*\n/</span>, <span class="ruby-string">''</span>)&#x000A;    <span class="ruby-identifier">indent</span> = <span class="ruby-identifier">code</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">%r\n[ \t]*\n/</span>, <span class="ruby-string">&quot;\n&quot;</span>).<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">%r^ */</span>).<span class="ruby-identifier">map</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">i</span>.<span class="ruby-identifier">size</span> }.<span class="ruby-identifier">min</span>&#x000A;    <span class="ruby-identifier">code</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-node">%r^#{' ' * indent}/</span>, <span class="ruby-string">''</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">indent</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>&#x000A;&#x000A;      <span class="ruby-node">&quot;&lt;pre&gt;#{code}&lt;/pre&gt;&quot;</span>&#x000A;  <span class="ruby-keyword">end</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-templjoin'>
+                <a name='method-i-templjoin'></a>
+                <div class='synopsis'>
+                  <span class='name'>templjoin</span>
+                  <span class='arguments'>(name)</span>
+                </div>
+                <div class='description'>
+                  
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-templjoin-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-templjoin-source'><span class="ruby-comment"># File lib/hanna-nouveau.rb, line 315</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">templjoin</span>(<span class="ruby-identifier">name</span>)&#x000A;  <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-ivar">@templatedir</span>, <span class="ruby-identifier">name</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-with_layout'>
+                <a name='method-i-with_layout'></a>
+                <div class='synopsis'>
+                  <span class='name'>with_layout</span>
+                  <span class='arguments'>(values)</span>
+                </div>
+                <div class='description'>
+                  
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-with_layout-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-with_layout-source'><span class="ruby-comment"># File lib/hanna-nouveau.rb, line 205</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">with_layout</span>(<span class="ruby-identifier">values</span>)&#x000A;  <span class="ruby-identifier">layout</span> = <span class="ruby-identifier">haml_file</span>(<span class="ruby-identifier">templjoin</span>(<span class="ruby-constant">LAYOUT</span>))&#x000A;  <span class="ruby-identifier">layout</span>.<span class="ruby-identifier">to_html</span>(<span class="ruby-identifier">binding</span>, <span class="ruby-value">:values</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">values</span>) { <span class="ruby-keyword">yield</span> }&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-write_static_files'>
+                <a name='method-i-write_static_files'></a>
+                <div class='synopsis'>
+                  <span class='name'>write_static_files</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-write_static_files-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-write_static_files-source'><span class="ruby-comment"># File lib/hanna-nouveau.rb, line 84</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">write_static_files</span>&#x000A;  <span class="ruby-identifier">css_dir</span> = <span class="ruby-identifier">outjoin</span>(<span class="ruby-string">'css'</span>)&#x000A;&#x000A;  <span class="ruby-keyword">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">css_dir</span>)&#x000A;    <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">mkdir</span> <span class="ruby-identifier">css_dir</span>&#x000A;  <span class="ruby-keyword">end</span>&#x000A;&#x000A;  <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">css_dir</span>, <span class="ruby-string">'style.css'</span>), <span class="ruby-string">'w'</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Engine</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">templjoin</span>(<span class="ruby-constant">STYLE</span>))).<span class="ruby-identifier">to_css</span> }&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id='footer-push'></div>
+    </div>
+    <div id='footer'>
+      <a target="docwin" href="http://github.com/mislav/hanna/tree/master"><strong>Hanna</strong> RDoc template</a>
+    </div>
+  </body>
+</html>
