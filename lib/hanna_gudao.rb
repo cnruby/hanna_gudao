@@ -1,7 +1,10 @@
 # = A better RDoc HTML template
+# 
+# Code rewritten by: 
+#   Gudao Luo <gudao.luo@gamil.com> https://github.com/cnruby/hanna_gudao
 #
 # Code rewritten by:
-#   Erik Hollensbe <erik@hollensbe.org>
+#   Erik Hollensbe <erik@hollensbe.org> https://github.com/rdoc/hanna-nouveau
 #
 # RubyGems integration properly done by:
 #   James Tucker (aka raggi)

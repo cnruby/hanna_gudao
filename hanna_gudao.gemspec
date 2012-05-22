@@ -5,13 +5,13 @@
 
 Gem::Specification.new do |s|
   s.name = "hanna_gudao"
-  s.version = "0.3.0"
+  s.version = "0.3.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Erik Hollensbe", "James Tucker", "Mislav Marohnic"]
   s.date = "2012-05-22"
   s.description = ""
-  s.email = "erik@hollensbe.org"
+  s.email = "gudao.luo@gmail.com"
   s.extra_rdoc_files = [
     "LICENSE",
     "README.rdoc"
@@ -38,7 +38,7 @@ Gem::Specification.new do |s|
     "lib/hanna_gudao/template_files/styles.sass",
     "lib/rdoc/discover.rb"
   ]
-  s.homepage = "http://github.com/erikh/hanna-nouveau"
+  s.homepage = "http://github.com/cnruby/hanna_gudao"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = "1.8.22"

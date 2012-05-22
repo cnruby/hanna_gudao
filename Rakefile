@@ -13,11 +13,11 @@ require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "hanna_gudao"
-  gem.homepage = "http://github.com/erikh/hanna-nouveau"
+  gem.homepage = "http://github.com/cnruby/hanna_gudao"
   gem.license = "MIT"
   gem.summary = %Q{A rework of the Hanna generator for RDoc 2.5 and 3.x}
   gem.description = %Q{}
-  gem.email = "erik@hollensbe.org"
+  gem.email = "gudao.luo@gmail.com"
   gem.authors = ["Erik Hollensbe", "James Tucker", "Mislav Marohnic"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
   # and development dependencies are only needed for development (ie running rake tasks, tests, etc)

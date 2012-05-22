@@ -1,4 +1,4 @@
-= Hanna Nouveau — a better RDoc template, now for RDoc 2.5 and 3.0.
+= Hanna Nouveau — a better RDoc template, now for 3.x
 
 Based on the original Hanna by Mislav.
 
@@ -9,7 +9,7 @@ wiki}[http://github.com/mislav/hanna/wikis/home].)
 
 Hanna gem is available from http://rubygems.org:
 
-    gem install hanna-nouveau
+    gem install hanna_gduao
 
 The template was created by {Mislav}[http://mislav.caboo.se/] and since then
 has seen contributions from:
