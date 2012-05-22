@@ -15,7 +15,7 @@ Jeweler::Tasks.new do |gem|
   gem.name = "hanna_gudao"
   gem.homepage = "http://github.com/cnruby/hanna_gudao"
   gem.license = "MIT"
-  gem.summary = %Q{A rework of the Hanna generator for RDoc 3.x}
+  gem.summary = %Q{A rework of the Hanna Nouveau generator for RDoc 3.x}
   gem.description = %Q{}
   gem.email = "gudao.luo@gmail.com"
   gem.authors = ["Erik Hollensbe", "James Tucker", "Mislav Marohnic"]
