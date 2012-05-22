@@ -15,7 +15,7 @@ Jeweler::Tasks.new do |gem|
   gem.name = "hanna_gudao"
   gem.homepage = "http://github.com/cnruby/hanna_gudao"
   gem.license = "MIT"
-  gem.summary = %Q{A rework of the Hanna generator for RDoc 2.5 and 3.x}
+  gem.summary = %Q{A rework of the Hanna generator for RDoc 3.x}
   gem.description = %Q{}
   gem.email = "gudao.luo@gmail.com"
   gem.authors = ["Erik Hollensbe", "James Tucker", "Mislav Marohnic"]
@@ -33,7 +33,7 @@ RDoc::Task.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "hanna-nouveau #{version}"
+  rdoc.title = "hanna_gudao #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end

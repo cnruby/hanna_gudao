@@ -9,7 +9,7 @@ wiki}[http://github.com/mislav/hanna/wikis/home].)
 
 Hanna gem is available from http://rubygems.org:
 
-    gem install hanna_gduao
+    gem install hanna_gudao
 
 The template was created by {Mislav}[http://mislav.caboo.se/] and since then
 has seen contributions from:
@@ -20,6 +20,9 @@ has seen contributions from:
 3. {Erik Hollensbe}[http://github.com/erikh] a serious refactoring and up to
    date with RDoc 2.5.x and 3.x, now named 'hanna-nouveau'.
 4. {James Tucker}[http://github.com/raggi] minor cleanups for Erik.
+5. {Gudao Luo}{http://github.com/cnruby} hanna-nouveau make the error
+   "Unfortunately, the gem hanna-nouveau (0.2.4) has an invalid gemspec...."
+   for the command "bundle update".
 
 == Usage
 

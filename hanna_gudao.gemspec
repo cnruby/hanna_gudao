@@ -42,7 +42,7 @@ Gem::Specification.new do |s|
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = "1.8.22"
-  s.summary = "A rework of the Hanna generator for RDoc 2.5 and 3.x"
+  s.summary = "A rework of the Hanna generator for RDoc 3.x"
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
